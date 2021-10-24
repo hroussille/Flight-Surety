@@ -1,0 +1,61 @@
+.App {
+  text-align: center;
+  background-image: url("./images/flight.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.App-content-connect {
+  font-size: calc(20px + 2vmin);
+  padding-top: 400px;
+  color: #ffffff;
+  min-height: 30vh;
+}
+
+.App-content-dashboard {
+  text-align: left;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: #000000;
+  min-height: 10vh;
+  opacity: 0.9;
+}
+
+.Icon-grey {
+  font-size: 2.5em;
+  color: dimgrey;
+}
+
+.Icon-green {
+  font-size: 2.5em;
+  color: green !important;
+}
+
+.App-content-dashboard-user-account {
+  padding-bottom: 20px;
+}
+
+.App-content-dashboard-user-account p {
+  display: inline;
+  font-weight: bold;
+  padding-right: 50px;
+}
+
+.App-content-dashboard-user-account p:last-of-type {
+  padding-right: 0px;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
