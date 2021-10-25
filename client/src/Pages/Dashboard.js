@@ -49,15 +49,22 @@ function Dashboard() {
   };
 
   return (
-    <div className="App-content-dashboard">
-      <AccountInformations></AccountInformations>
+    <div className="Wrapper">
       <ContractsProvider
         appInstance={appInstance}
         appStatus={appStatus}
         dataInstance={dataInstance}
       >
-        <ContractsInformations></ContractsInformations>
-        <FlightForm></FlightForm>
+        <div className="App-content-dashboard">
+          <AccountInformations></AccountInformations>
+          <ContractsInformations></ContractsInformations>
+        </div>
+        <div className="App-content-dashboard">
+          <FlightForm></FlightForm>
+        </div>
+        <div className="App-content-dashboard">
+          <FlightForm></FlightForm>
+        </div>
       </ContractsProvider>
     </div>
   );

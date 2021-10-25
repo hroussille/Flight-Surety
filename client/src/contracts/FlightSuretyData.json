@@ -8,13 +8,11 @@
     },
     {
       "stateMutability": "payable",
-      "type": "fallback",
-      "payable": true
+      "type": "fallback"
     },
     {
       "stateMutability": "payable",
-      "type": "receive",
-      "payable": true
+      "type": "receive"
     },
     {
       "inputs": [],
@@ -27,8 +25,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -48,40 +45,35 @@
       "name": "registerAirline",
       "outputs": [],
       "stateMutability": "pure",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
       "name": "buy",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function",
-      "payable": true
+      "type": "function"
     },
     {
       "inputs": [],
       "name": "creditInsurees",
       "outputs": [],
       "stateMutability": "pure",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
       "name": "pay",
       "outputs": [],
       "stateMutability": "pure",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
       "name": "fund",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function",
-      "payable": true
+      "type": "function"
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[],\"name\":\"buy\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"creditInsurees\",\"outputs\":[],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"fund\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"isOperational\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pay\",\"outputs\":[],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"registerAirline\",\"outputs\":[],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bool\",\"name\":\"mode\",\"type\":\"bool\"}],\"name\":\"setOperatingStatus\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"buy()\":{\"details\":\"Buy insurance for a flight\"},\"constructor\":{\"details\":\"Constructor      The deploying account becomes contractOwner\"},\"creditInsurees()\":{\"details\":\"Credits payouts to insurees\"},\"fund()\":{\"details\":\"Initial funding for the insurance. Unless there are too many delayed flights      resulting in insurance payouts, the contract should be self-sustaining\"},\"isOperational()\":{\"details\":\"Get operating status of contract\",\"returns\":{\"_0\":\"A bool that is the current operating status\"}},\"pay()\":{\"details\":\"Transfers eligible payout funds to insuree\"},\"registerAirline()\":{\"details\":\"Add an airline to the registration queue      Can only be called from FlightSuretyApp contract\"},\"setOperatingStatus(bool)\":{\"details\":\"Sets contract operations on/off When operational mode is disabled, all write transactions except for this one will fail\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/FlightSuretyData.sol\":\"FlightSuretyData\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/FlightSuretyData.sol\":{\"keccak256\":\"0xe439c10e500a4e258ca8bf05bf9bf2e72a43f25d05d6dfa20dee22506592d0e8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f0482f3a730bf1da96f6faf8bcaf64480a9dc259de3a40781873cdd46ffaaaa8\",\"dweb:/ipfs/QmTvJ3F6fYAEx1FRpw6Wo4QTbA44YY1pGoNGCcYwGDRGjy\"]},\"project:/node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol\":{\"keccak256\":\"0x8666f020bd8fc9dc14f07e2ebc52b5f236ab4cdde7c77679b08cb2f94730043b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://163776cbf565c722232393aa2d62cbe8a2ffb5805986abf4906c00e1e07450a6\",\"dweb:/ipfs/QmPZoN9T3cb6o8bGhjBPZcz7im8T8DWhpr3tjLwhJJHx9N\"]}},\"version\":1}",
@@ -3937,8 +3929,7 @@
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-10-24T18:54:01.082Z",
-  "networkType": "ethereum",
+  "updatedAt": "2021-10-25T15:39:46.417Z",
   "devdoc": {
     "kind": "dev",
     "methods": {
