@@ -45,8 +45,6 @@ class Web3Provider extends React.Component {
   };
 
   onAccountsChanged = (accounts) => {
-    console.log(accounts);
-
     if (accounts.length > 0) {
       this.setState({ account: accounts[0], accountConnected: true });
       toast.success(

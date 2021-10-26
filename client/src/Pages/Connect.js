@@ -11,7 +11,7 @@ function Connect() {
   async function handleClick() {
     setButtonDisabled(true);
     await requestAccount();
-    setButtonDisabled(false);
+    //setButtonDisabled(false);
   }
 
   return (

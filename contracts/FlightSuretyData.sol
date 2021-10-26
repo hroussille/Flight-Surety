@@ -17,6 +17,8 @@ contract FlightSuretyData {
     /*                                       EVENT DEFINITIONS                                  */
     /********************************************************************************************/
 
+    event OperationalChanged(bool operational);
+
     /**
      * @dev Constructor
      *      The deploying account becomes contractOwner
@@ -63,13 +65,20 @@ contract FlightSuretyData {
         return operational;
     }
 
+    function isOwner() public view returns (bool) {
+        return msg.sender == contractOwner;
+    }
+
     /**
      * @dev Sets contract operations on/off
      *
      * When operational mode is disabled, all write transactions except for this one will fail
      */
-    function setOperatingStatus(bool mode) external requireContractOwner {
-        operational = mode;
+
+    function setOperational(bool _operational) public requireContractOwner {
+        operational = _operational;
+
+        emit OperationalChanged(operational);
     }
 
     /********************************************************************************************/

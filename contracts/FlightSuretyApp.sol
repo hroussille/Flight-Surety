@@ -25,10 +25,9 @@ contract FlightSuretyApp {
     uint8 private constant STATUS_CODE_LATE_TECHNICAL = 40;
     uint8 private constant STATUS_CODE_LATE_OTHER = 50;
 
-    bool private operationalStatus = true;
+    bool private operational = false;
 
     address private contractOwner; // Account used to deploy contract
-
     struct Flight {
         bool isRegistered;
         uint8 statusCode;
@@ -51,7 +50,7 @@ contract FlightSuretyApp {
      */
     modifier requireIsOperational() {
         // Modify to call data contract's status
-        require(operationalStatus, "Contract is currently not operational");
+        require(operational, "Contract is currently not operational");
         _; // All modifiers require an "_" which indicates where the function body will be added
     }
 
@@ -79,8 +78,18 @@ contract FlightSuretyApp {
     /*                                       UTILITY FUNCTIONS                                  */
     /********************************************************************************************/
 
+    function setOperational(bool _operational) public requireContractOwner {
+        operational = _operational;
+
+        emit OperationalChanged(operational);
+    }
+
     function isOperational() public view returns (bool) {
-        return operationalStatus; // Modify to call data contract's status
+        return operational;
+    }
+
+    function isOwner() public view returns (bool) {
+        return msg.sender == contractOwner;
     }
 
     /********************************************************************************************/
@@ -166,6 +175,8 @@ contract FlightSuretyApp {
     // Key = hash(index, flight, timestamp)
     mapping(bytes32 => ResponseInfo) private oracleResponses;
 
+    event OperationalChanged(bool operational);
+
     // Event fired each time an oracle submits a response
     event FlightStatusInfo(
         address airline,
@@ -201,12 +212,7 @@ contract FlightSuretyApp {
         oracles[msg.sender] = Oracle({isRegistered: true, indexes: indexes});
     }
 
-    function getMyIndexes()
-        external
-        view
-        isOperational
-        returns (uint8[3] memory)
-    {
+    function getMyIndexes() external view returns (uint8[3] memory) {
         require(
             oracles[msg.sender].isRegistered,
             "Not registered as an oracle"

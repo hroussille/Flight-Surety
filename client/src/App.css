@@ -22,35 +22,41 @@
   text-align: left;
   padding: 20px;
   padding-bottom: 10px;
-  margin: 20px;
+  margin: 15px;
   border-radius: 20px;
   background-color: #ffffff;
   color: #000000;
-  min-height: 10vh;
   opacity: 0.9;
 }
 
 .Icon-grey {
+  margin-right: 5px;
+  margin-left: 5px;
   font-size: 2.5em;
   color: dimgrey;
 }
 
 .Icon-green {
+  margin-left: 5px;
   font-size: 2.5em;
   color: green !important;
 }
 
-.App-content-dashboard-user-account {
-  padding-bottom: 20px;
+.Icon-small {
+  font-size: 1.5em;
 }
 
-.App-content-dashboard-user-account p {
-  display: inline;
+.App-content-dashboard-user-account {
+  padding-bottom: 10px;
+}
+
+.App-content-dashboard-user-account div {
+  display: inline-block;
   font-weight: bold;
   padding-right: 50px;
 }
 
-.App-content-dashboard-user-account p:last-of-type {
+.App-content-dashboard-user-account div:last-of-type {
   padding-right: 0px;
 }
 

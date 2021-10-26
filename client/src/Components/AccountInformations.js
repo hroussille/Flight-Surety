@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import { RiAccountCircleFill } from "react-icons/ri";
 import { FaRegMoneyBillAlt } from "react-icons/fa";
-import { AiFillCheckCircle } from "react-icons/ai";
+import { BsCheckCircle } from "react-icons/bs";
 import { Web3Context } from "../Providers/Web3Provider";
 import Web3 from "web3";
 
@@ -20,16 +20,12 @@ function AccountInformations() {
 
   return (
     <div className="App-content-dashboard-user-account">
-      <p>
+      <div>
         <RiAccountCircleFill className="Icon-grey" /> {account}{" "}
-      </p>
-      <p>
+      </div>
+      <div>
         <FaRegMoneyBillAlt className="Icon-grey" /> {balance} ETH{" "}
-      </p>
-      <p>
-        Status :
-        <AiFillCheckCircle className="Icon-green" />
-      </p>
+      </div>
     </div>
   );
 }

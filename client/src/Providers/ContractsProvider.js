@@ -2,13 +2,14 @@ import React from "react";
 
 const ContractsContext = React.createContext({
   appInstance: null,
-  appStatus: false,
+  appStatus: null,
   dataInstance: null,
+  dataStatus: null,
 });
 
 class ContractsProvider extends React.Component {
   render() {
-    const { appInstance, appStatus, dataInstance } = this.props;
+    const { appInstance, appStatus, dataInstance, dataStatus } = this.props;
 
     return (
       <ContractsContext.Provider
@@ -16,6 +17,7 @@ class ContractsProvider extends React.Component {
           appInstance: appInstance,
           appStatus: appStatus,
           dataInstance: dataInstance,
+          dataStatus: dataStatus,
         }}
       >
         {this.props.children}

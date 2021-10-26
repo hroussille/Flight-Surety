@@ -1,9 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import React from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/form";
 
-function FlightForm(props) {
+function InsuranceForm(props) {
   function handleSubmit(event) {
     event.preventDefault();
     event.stopPropagation();
@@ -19,6 +18,10 @@ function FlightForm(props) {
             <Form.Label>Flight number</Form.Label>
             <Form.Control type="text" placeholder="Your Flight number" />
           </Form.Group>
+          <Form.Group className="mb-3" controlId="insuranceValue">
+            <Form.Label>Insurance value</Form.Label>
+            <Form.Control type="number" placeholder="1 ETH" />
+          </Form.Group>
           <Button variant="primary" type="submit">
             Submit to oracles
           </Button>
@@ -28,4 +31,4 @@ function FlightForm(props) {
   );
 }
 
-export default FlightForm;
+export default InsuranceForm;
