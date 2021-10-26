@@ -4,7 +4,6 @@ import { useState } from "react";
 
 import { RiAccountCircleFill } from "react-icons/ri";
 import { FaRegMoneyBillAlt } from "react-icons/fa";
-import { BsCheckCircle } from "react-icons/bs";
 import { Web3Context } from "../Providers/Web3Provider";
 import Web3 from "web3";
 

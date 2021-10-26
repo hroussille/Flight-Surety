@@ -35,6 +35,7 @@ function Dashboard() {
   useEffect(() => {
     checkDeployement();
     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // TODO: Return function to cleanup event listeners
   }, [account]);
 
   const checkDeployement = async () => {
@@ -85,14 +86,22 @@ function Dashboard() {
 
   function onAppStatusChanged(error, value) {
     if (!error) {
-      console.log(value);
+      if (value.returnValues.operational) {
+        toast.success("App contract activated", { position: "top-right" });
+      } else {
+        toast.error("App contract deactivated", { position: "top-right" });
+      }
       setAppStatus(value.returnValues.operational);
     }
   }
 
   function onDataStatusChanged(error, value) {
     if (!error) {
-      console.log(value);
+      if (value.returnValues.operational) {
+        toast.success("Data contract activated", { position: "top-right" });
+      } else {
+        toast.error("Data contract deactivated", { position: "top-right" });
+      }
       setDataStatus(value.returnValues.operational);
     }
   }
@@ -112,11 +121,7 @@ function Dashboard() {
           <ContractsInformations></ContractsInformations>
         </div>
         {(isAppOwner || isDataOwner) && (
-          <OwnerForm
-            visible={false}
-            app={isAppOwner}
-            data={isDataOwner}
-          ></OwnerForm>
+          <OwnerForm app={isAppOwner} data={isDataOwner}></OwnerForm>
         )}
         <FlightForm></FlightForm>
         <InsuranceForm></InsuranceForm>

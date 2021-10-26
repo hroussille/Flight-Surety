@@ -67,3 +67,14 @@
 .red {
   color: red;
 }
+
+#title {
+  font-size: 3em;
+}
+
+#Data-button {
+  margin-right: 10px;
+}
+
+#App-button {
+}
