@@ -60,6 +60,10 @@
   padding-right: 0px;
 }
 
+.Section-title {
+  text-align: center;
+}
+
 .green {
   color: green;
 }
