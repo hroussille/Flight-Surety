@@ -1,8 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/form";
+import { ContractsContext } from "../Providers/ContractsProvider";
 
 function InsuranceForm(props) {
+  const { appInstance, appStatus, dataStatus } = useContext(ContractsContext);
+
   function handleSubmit(event) {
     event.preventDefault();
     event.stopPropagation();
@@ -23,7 +27,11 @@ function InsuranceForm(props) {
             <Form.Label>Insurance value</Form.Label>
             <Form.Control type="number" placeholder="1 ETH" />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button
+            variant="primary"
+            type="submit"
+            disabled={appStatus !== true || dataStatus != true}
+          >
             Submit to oracles
           </Button>
         </Form>

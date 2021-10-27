@@ -1,10 +1,15 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import React from "react";
+import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/form";
+import { ContractsContext } from "../Providers/ContractsProvider";
 
 function FlightForm(props) {
-  function handleOnClick() {
+  const { appInstance, appStatus, dataStatus } = useContext(ContractsContext);
+
+  console.log(appStatus);
+
+  function handleSubmit(event) {
     event.preventDefault();
     event.stopPropagation();
     const value = event.target.elements.flightNumber.value;
@@ -20,7 +25,11 @@ function FlightForm(props) {
             <Form.Label>Flight number</Form.Label>
             <Form.Control type="text" placeholder="Your Flight number" />
           </Form.Group>
-          <Button variant="primary" type="submit" onClick={handleOnClick}>
+          <Button
+            variant="primary"
+            type="submit"
+            disabled={appStatus !== true || dataStatus != true}
+          >
             Submit to oracles
           </Button>
         </Form>
